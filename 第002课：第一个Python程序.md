@@ -27,7 +27,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 #### 文本编辑器 - Visual Studio Code
 
-Visual Studio Code（通常简称为VS Code）是一个由微软开发能够在Windows、 Linux和macOS等操作系统上运行的代码编辑神器。它支持语法高亮、自动补全、多点编辑、运行调试等一系列便捷功能，而且能够支持多种编程语言。**现阶段，我强烈建议大家使用VS Code来编写Python代码**。关于VS Code的下载、安装和使用，推荐大家阅读知乎上名为[《VScode安装使用》](<https://zhuanlan.zhihu.com/p/106357123>)的文章。下图是使用VS Code的用户主界面。
+Visual Studio Code（通常简称为VS Code）是一个由微软开发能够在Windows、 Linux和macOS等操作系统上运行的代码编辑神器。它支持语法高亮、自动补全、多点编辑、运行调试等一系列便捷功能，而且能够支持多种编程语言。现阶段，**强烈建议**大家使用VS Code来编写Python代码。关于VS Code的下载、安装和使用，推荐大家阅读知乎上名为[《VScode安装使用》](<https://zhuanlan.zhihu.com/p/106357123>)的文章。下图是使用VS Code的用户主界面。
 
 ![](res/vscode.png)
 
