@@ -4,33 +4,33 @@
 
 ### PyCharm的下载和安装
 
-可以在[JetBrains公司的官方网站](<https://www.jetbrains.com/>)找到PyCharm的[下载链接](https://www.jetbrains.com/pycharm/download/)，有两个可供下载的版本，一个是社区版（PyCharm CE），一个是专业版（PyCharm Professional）。社区版在Apache许可证下发布，可以免费使用；专业版在专用许可证下发布，需要购买授权后才能使用，但新用户可以试用30天。很显然，专业版提供了更为强大的功能和对企业级开发的各种支持，但是对于初学者来说，社区版已经足够强大和好用了。安装PyCharm只需要直接运行下载的安装程序，然后持续的点击“下一步”就可以啦。下面是我在Windows系统下安装PyCharm的截图。
+可以在[JetBrains公司的官方网站](<https://www.jetbrains.com/>)找到PyCharm的[下载链接](https://www.jetbrains.com/pycharm/download/)，有两个可供下载的版本，一个是社区版（PyCharm CE），一个是专业版（PyCharm Professional）。社区版在Apache许可证下发布，可以免费使用；专业版在专用许可证下发布，需要购买授权后才能使用，但新用户可以试用30天。很显然，专业版提供了更为强大的功能和对企业级开发的各种支持，但是对于初学者来说，社区版已经足够强大和好用了。安装PyCharm只需要直接运行下载的安装程序，然后持续的点击“Next”（下一步）按钮就可以啦。下面是我在Windows系统下安装PyCharm的截图，安装完成后点击“Finish”（结束）按钮关闭安装向导，然后可以通过双击桌面的快捷方式来运行PyCharm。
 
 ![](res/pycharm-installation.png)
 
 ### 首次使用的设置
 
-第一次使用PyCharm时，会有一个导入设置的向导，如果之前没有使用PyCharm或者没有保存过设置的就直接选择“Do not import settings”进入下一步即可，下面是我在macOS系统下第一个使用PyCharm时的截图。
+第一次使用PyCharm时，会有一个导入设置的向导，如果之前没有使用PyCharm或者没有保存过设置的就直接选择“Do not import settings”进入下一步即可，下面是我在macOS系统下第一次使用PyCharm时的截图。
 
 ![](./res/pycharm-import-settings.png)
 
-专业版的PyCharm是需要激活的，**强烈建议大家在条件允许的情况下支付费用来支持优秀的产品**，如果不用做商业用途或者不需要使用PyCharm的高级功能，我们可以暂时选择试用30天或者使用社区版的PyCharm。如果你是一名学生，希望购买PyCharm来使用，可以看看[教育优惠官方申请指南](https://sales.jetbrains.com/hc/zh-cn/articles/207154369)。
+专业版的PyCharm是需要激活的，**强烈建议大家在条件允许的情况下支付费用来支持优秀的产品**，如果不用做商业用途或者不需要使用PyCharm的高级功能，我们可以暂时选择试用30天或者使用社区版的PyCharm。如果你是一名学生，希望购买PyCharm来使用，可以看看[教育优惠官方申请指南](https://sales.jetbrains.com/hc/zh-cn/articles/207154369)。如下图所示，我们需要点击“Evaluate”按钮来试用专业版PyCharm。
 
 ![](./res/pycharm-activation.png)
 
- 接下来是选择UI主题，这个可以根据个人喜好进行选择。
+接下来是选择UI主题，可以根据个人喜好进行选择，深色的主题比较护眼而浅色的主题对比度更好。
 
 ![](./res/pycharm-ui-themes.png)
 
- 再接下来是创建可以在终端（命令行）中使用PyCharm项目的启动脚本，当然也可以直接跳过这一步。
+再接下来是创建可以在“终端”或“命令行提示符”中运行PyCharm的启动脚本，当然也可以不做任何勾选，直接点击“Next: Featured plugins”按钮进入下一环节。
 
 ![](./res/pycharm-create-launcher.png)
 
-然后可以选择需要安装哪些插件，我们可以暂时什么都不安装等需要的时候再来决定。
+然后可以选择需要安装哪些插件，我们可以暂时什么都不安装，等需要的时候再来决定。
 
 ![](./res/pycharm-install-plugins.png)
 
-最后点击上图右下角的“Start using PyCharm”就可以开始使用PyCharm了。
+最后点击上图右下角的“Start using PyCharm”（开始使用PyCharm）就可以开启你的PyCharm之旅了。
 
 ### 用PyCharm创建项目
 
@@ -76,11 +76,11 @@ PyCharm的菜单项中有一个非常有用的“Code”菜单，菜单中提供
 | `F2`                                          | 快速定位到错误代码                     |
 | `command+ alt + F7`                           | 查看哪些地方用到了指定的函数、类、方法 |
 
-> **说明**：Windows系统下如果使用PyCharm的默认设置，可以将上面的`command`键换成`ctrl`键即可，唯一的例外是`ctrl + space`那个快捷键，因为它跟Windows系统切换输入法的快捷键是冲突的，所以在Windows系统下没有与之对应的快捷键。
+> **说明**：Windows系统下如果使用PyCharm的默认设置，可以将上面的`command`键换成`ctrl`键即可，唯一的例外是`ctrl + space`那个快捷键，因为它跟Windows系统切换输入法的快捷键是冲突的，所以在Windows系统下默认没有与之对应的快捷键。
 
 ### 简单的总结
 
-PyCharm很强大，尤其是专业版的PyCharm，建议大家一边使用一边总结，这样才会用到越来越顺手，工作效率也会随之而提升。
+PyCharm很强大，尤其是专业版的PyCharm，但是要用得很溜也是需要花时间的。建议大家一边使用一边总结，这样才会越来越顺手，工作效率也会随之而提升。
 
 > **温馨提示**：学习中如果遇到困难，可以加**QQ交流群**询问。
 >
