@@ -14,14 +14,4 @@
 151.101.184.133    camo.githubusercontent.com
 ```
 
-<center>图1. 公开课信息</center>
-
-![](res/open-course.png)
-
-<center>图2. 扫码加入公开课</center>
-
-![](res/qrcode.png)
-
-<center>图3. 学习交流群信息</center>
-
 ![](res/qrcode-group.png)
