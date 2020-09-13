@@ -48,7 +48,7 @@ python --version
 
 macOS自带了Python 2，但是我们需要安装和使用的是Python 3。可以通过Python官方网站提供的[下载链接](<https://www.python.org/downloads/release/python-376/>)找到适合macOS的“macOS installer”来安装Python 3，安装过程基本不需要做任何勾选，直接点击“下一步”即可。安装完成后，可以在macOS的“终端”工具中输入`python3`命令来调用Python 3解释器，因为如果直接输入`python`，将会调用Python 2的解释器。
 
-> **说明**：如果对安装Python环境有任何疑问，可以参考我们在**百度云盘**上提供的**视频讲解**。链接：<https://pan.baidu.com/s/10y7sGM016YBM7gDdauGqLw>，密码：4s6r。
+> **说明**：如果对安装Python环境有任何疑问，可以参考我们在**百度云盘**上提供的**视频讲解**。视频链接：https://pan.baidu.com/s/1Tu8wy9IExP_Co6CurVr2Pg，密码：rbao。
 
 ### 总结
 
