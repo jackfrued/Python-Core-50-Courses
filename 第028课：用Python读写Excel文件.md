@@ -88,17 +88,110 @@ for row in range(len(scores)):
 wb.save('考试成绩表.xlsx')
 ```
 
-#### 单元格样式
+#### 调整单元格样式
 
+在写Excel文件时，我们还可以为单元格设置样式，主要包括字体（Font）、对齐方式（Alignment）、边框（Border）和背景（Background）的设置，`xlwt`对这几项设置都封装了对应的类来支持。要设置单元格样式需要首先创建一个`XFStyle`对象，再通过该对象的属性对字体、对齐方式、边框等进行设定，例如在上面的例子中，如果希望将表头单元格的背景色修改为黄色，可以按照如下的方式进行操作。
 
+```Python
+header_style = xlwt.XFStyle()
+pattern = xlwt.Pattern()
+pattern.pattern = xlwt.Pattern.SOLID_PATTERN
+# 0 - 黑色、1 - 白色、2 - 红色、3 - 绿色、4 - 蓝色、5 - 黄色、6 - 粉色、7 - 青色、
+pattern.pattern_fore_colour = 5
+header_style.pattern = pattern
+titles = ('姓名', '语文', '数学', '英语')
+for index, title in enumerate(titles):
+    sheet.write(0, index, title, header_style)
+```
+
+如果希望为表头设置指定的字体，可以使用`Font`类并添加如下所示的代码。
+
+```Python
+font = xlwt.Font()
+# 字体名称
+font.name = '华文楷体'
+# 字体大小（20是基准单位，18表示18px）
+font.height = 20 * 18
+# 是否使用粗体
+font.bold = True
+# 是否使用斜体
+font.italic = False
+# 字体颜色
+font.colour_index = 1
+header_style.font = font
+```
+
+如果希望表头垂直居中对齐，可以使用下面的代码进行设置。
+
+```Python
+align = xlwt.Alignment()
+# 垂直方向的对齐方式
+align.vert = xlwt.Alignment.VERT_CENTER
+# 水平方向的对齐方式
+align.horz = xlwt.Alignment.HORZ_CENTER
+header_style.alignment = align
+```
+
+如果希望给表头加上黄色的虚线边框，可以使用下面的代码来设置。
+
+```Python
+borders = xlwt.Borders()
+props = (
+    ('top', 'top_colour'), ('right', 'right_colour'),
+    ('bottom', 'bottom_colour'), ('left', 'left_colour')
+)
+# 通过循环对四个方向的边框样式及颜色进行设定
+for position, color in props:
+    setattr(borders, position, xlwt.Borders.DASHED)
+    setattr(borders, color, 5)
+header_style.borders = borders
+```
+
+如果要调整单元格的宽度（列宽）和表头的高度（行高），可以按照下面的代码进行操作。
+
+```Python
+# 设置行高为40px
+sheet.row(0).set_style(xlwt.easyxf(f'font:height {20 * 40}'))
+titles = ('姓名', '语文', '数学', '英语')
+for index, title in enumerate(titles):
+    # 设置列宽为200px
+    sheet.col(index).width = 20 * 200
+    # 设置单元格的数据和样式
+    sheet.write(0, index, title, header_style)
+```
 
 #### 公式计算
 
+对于前面打开的“阿里巴巴2017年股票数据.xlsx”文件，如果要统计全年收盘价（Close字段）的平均值以及全年交易量（Volume字段）的总和，可以使用Excel的公式计算即可。我们可以先使用`xlrd`读取Excel文件夹，然后通过一个名为`xlutils`的三方库提供的`copy`函数将读取到的Excel文件转成`Workbook`对象进行写操作，在调用`write`方法时，可以将一个`Formula`对象写入单元格。
 
+安装`xlutils`三方库。
+
+```Bash
+pip install xlutils -i https://pypi.doubanio.com/simple
+```
+
+实现公式计算的代码如下所示。
+
+```Python
+import xlrd
+import xlwt
+from xlutils.copy import copy
+
+wb_for_read = xlrd.open_workbook('阿里巴巴2017年股票数据.xlsx')
+sheet1 = wb_for_read.sheet_by_index(0)
+nrows, ncols = sheet1.nrows, sheet1.ncols
+wb_for_write = copy(wb_for_read)
+sheet2 = wb_for_write.get_sheet(0)
+sheet2.write(nrows, 4, xlwt.Formula(f'average(E2:E{nrows})'))
+sheet2.write(nrows, 6, xlwt.Formula(f'sum(G2:G{nrows})'))
+wb_for_write.save('阿里巴巴2017年股票数据-2.xlsx')
+```
+
+> **说明**：上面的代码有一些小瑕疵，有兴趣的读者可以自行探索如何解决。
 
 ###  简单的总结
 
-其他操作Excel文件的三方库（如`openpyxl`）大家有兴趣可以自行了解。掌握了Python程序操作Excel的方法，可以解决日常办公中很多繁琐的处理Excel电子表格工作，最常见的就是将多个数据格式相同的Excel文件合并到一个文件以及从多个Excel文件或表单中提取指定的数据。本章例子中使用的Excel文件，大家可以从我的百度云盘链接中进行下载，地址：<https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g>，提取码：e7b4。
+其他操作Excel文件的三方库（如`openpyxl`）大家有兴趣可以自行了解。掌握了Python程序操作Excel的方法，可以解决日常办公中很多繁琐的处理Excel电子表格工作，最常见就是将多个数据格式相同的Excel文件合并到一个文件以及从多个Excel文件或表单中提取指定的数据。当然，如果要对表格数据进行处理，使用Python数据分析神器之一的`pandas`库可能更为方便，因为`pandas`库封装的函数以及`DataFrame`类可以完成大多数数据处理的任务。本章例子中使用的Excel文件，大家可以从我的百度云盘链接中进行下载，地址：<https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g>，提取码：e7b4。
 
 > **温馨提示**：学习中如果遇到困难，可以加**QQ交流群**询问。
 >
