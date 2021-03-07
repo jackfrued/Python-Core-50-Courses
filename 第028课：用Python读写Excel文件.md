@@ -96,7 +96,7 @@ wb.save('考试成绩表.xlsx')
 header_style = xlwt.XFStyle()
 pattern = xlwt.Pattern()
 pattern.pattern = xlwt.Pattern.SOLID_PATTERN
-# 0 - 黑色、1 - 白色、2 - 红色、3 - 绿色、4 - 蓝色、5 - 黄色、6 - 粉色、7 - 青色、
+# 0 - 黑色、1 - 白色、2 - 红色、3 - 绿色、4 - 蓝色、5 - 黄色、6 - 粉色、7 - 青色
 pattern.pattern_fore_colour = 5
 header_style.pattern = pattern
 titles = ('姓名', '语文', '数学', '英语')
