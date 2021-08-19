@@ -11,7 +11,7 @@ CSV文件有以下特点：
 3. 每条记录被分隔符（如逗号、分号、制表符等）分隔为字段（列）；
 4. 每条记录都有同样的字段序列。
 
-CSV文件可以使用文本编辑器或类似于Excel电子表格这类工具打开和编辑，当使用Excel这类电子表格打开CSV文件时，你甚至感觉不到CSV和Excel文件的区别。很多数据库系统都支持将数据导出到CSV文件中，当然也支持从CSV文件中读入数据保存到数据库中，这些内容并不是我们这里讨论的重点。
+CSV文件可以使用文本编辑器或类似于Excel电子表格这类工具打开和编辑，当使用Excel这类电子表格打开CSV文件时，你甚至感觉不到CSV和Excel文件的区别。很多数据库系统都支持将数据导出到CSV文件中，当然也支持从CSV文件中读入数据保存到数据库中，这些内容并不是现在要讨论的重点。
 
 ### 将数据写入CSV文件
 
@@ -25,17 +25,38 @@ with open('scores.csv', 'w') as file:
     writer = csv.writer(file)
     writer.writerow(['姓名', '语文', '数学', '英语'])
     names = ['关羽', '张飞', '赵云', '马超', '黄忠']
-    for i in range(5):
-        verbal = random.randint(50, 100)
-        math = random.randint(40, 100)
-        english = random.randint(30, 100)
-        writer.writerow([names[i], verbal, math, english])
+    for name in names:
+        scores = [random.randrange(50, 101) for _ in range(3)]
+        scores.insert(0, name)
+        writer.writerow(scores)
 ```
 
-需要说明的是上面的`writer`函数，该函数除了传入要写入数据的文件对象外，还可以`dialect`参数，它表示CSV文件的方言，默认值是`excel`。除此之外，还可以通过`delimiter`、`quotechar`、`quoting`参数来指定分隔符（默认是逗号）、包围值的字符（默认是双引号）以及包围的方式。其中，包围值的字符主要用于当字段中有特殊符号时，通过添加包围值的字符可以避免二义性。大家可以尝试将上面第5行代码修改为下面的代码，看看生成的CSV文件到底有什么区别。
+生成的CSV文件的内容。
+
+```
+姓名,语文,数学,英语
+关羽,98,86,61
+张飞,86,58,80
+赵云,95,73,70
+马超,83,97,55
+黄忠,61,54,87
+```
+
+需要说明的是上面的`writer`函数，除了传入要写入数据的文件对象外，还可以`dialect`参数，它表示CSV文件的方言，默认值是`excel`。除此之外，还可以通过`delimiter`、`quotechar`、`quoting`参数来指定分隔符（默认是逗号）、包围值的字符（默认是双引号）以及包围的方式。其中，包围值的字符主要用于当字段中有特殊符号时，通过添加包围值的字符可以避免二义性。大家可以尝试将上面第5行代码修改为下面的代码，然后查看生成的CSV文件。
 
 ```Python
 writer = csv.writer(file, delimiter='|', quoting=csv.QUOTE_ALL)
+```
+
+生成的CSV文件的内容。
+
+```
+"姓名"|"语文"|"数学"|"英语"
+"关羽"|"88"|"64"|"65"
+"张飞"|"76"|"93"|"79"
+"赵云"|"78"|"55"|"76"
+"马超"|"72"|"77"|"68"
+"黄忠"|"70"|"72"|"51"
 ```
 
 ### 从CSV文件读取数据
@@ -47,9 +68,9 @@ import csv
 
 with open('scores.csv', 'r') as file:
     reader = csv.reader(file, delimiter='|')
-    for line in reader:
+    for data_list in reader:
         print(reader.line_num, end='\t')
-        for elem in line:
+        for elem in data_list:
             print(elem, end='\t')
         print()
 ```
@@ -58,4 +79,4 @@ with open('scores.csv', 'r') as file:
 
 ###  简单的总结
 
-将来如果大家使用Python做数据分析，很有可能会用到名为`pandas`的三方库，它是Python数据分析的神器之一。`pandas`中封装了名为`read_csv`和`to_csv`的函数用来读写CSV文件，其中`read_CSV`会将读取到的数据变成一个`DataFrame`对象，而这个对象就是`pandas`库中最重要的类，它封装了一系列的方法用于对数据进行处理（清洗、转换、聚合等）；而`to_csv`会将`DataFrame`对象中的数据写入CSV文件，完成数据的持久化。
+将来如果大家使用Python做数据分析，很有可能会用到名为`pandas`的三方库，它是Python数据分析的神器之一。`pandas`中封装了名为`read_csv`和`to_csv`的函数用来读写CSV文件，其中`read_CSV`会将读取到的数据变成一个`DataFrame`对象，而`DataFrame`就是`pandas`库中最重要的类型，它封装了一系列用于数据处理的方法（清洗、转换、聚合等）；而`to_csv`会将`DataFrame`对象中的数据写入CSV文件，完成数据的持久化。`read_csv`函数和`to_csv`函数远远比原生的`csvreader`和`csvwriter`强大。
