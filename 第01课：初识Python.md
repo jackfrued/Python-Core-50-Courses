@@ -74,4 +74,3 @@ macOS自带了Python 2，但是我们需要安装和使用的是Python 3。可�
 ### 总结
 
 Python语言可以做很多的事情，也值得我们去学习。要使用Python语言，首先需要在自己的计算机上安装Python环境，也就是运行Python程序的Python解释器。
-

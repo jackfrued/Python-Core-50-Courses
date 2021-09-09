@@ -83,6 +83,8 @@ document.add_page_break()
 document.save('demo.docx')
 ```
 
+> **提示**：上面代码第7行中的注释`# type: Doc`是为了在PyCharm中获得代码补全提示，因为如果不清楚对象具体的数据类型，PyCharm无法在后续代码中给出`Doc`对象的代码补全提示。
+
 执行上面的代码，打开生成的Word文档，效果如下图所示。
 
 <img src="https://gitee.com/jackfrued/mypic/raw/master/20210820002742.png" alt="image-20210820002742341" width="40%">&nbsp;&nbsp;<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820002843.png" alt="image-20210820002843696" width="40%">
@@ -98,7 +100,7 @@ for no, p in enumerate(doc.paragraphs):
     print(no, p.text)
 ```
 
-> **提示**：如果需要上面代码中的Word文件，可以通过下面的百度云盘地址进行获取。
+> **提示**：如果需要上面代码中的Word文件，可以通过下面的百度云盘地址进行获取。链接:https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g 提取码:e7b4。
 
 读取到的内容如下所示。
 
@@ -238,3 +240,6 @@ pres.save('test.pptx')
 
 <img src="https://gitee.com/jackfrued/mypic/raw/master/20210820010306.png" alt="image-20210820010306008" width="75%" />
 
+### 简单的总结
+
+用Python程序解决办公自动化的问题真的非常酷，它可以将我们从繁琐乏味的劳动中解放出来。写这类代码就是去做一件一劳永逸的事情，写代码的过程即便不怎么愉快，使用这些代码的时候应该是非常开心的。

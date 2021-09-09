@@ -57,6 +57,8 @@ print(sheet.row_values(0))
 print(sheet.row_slice(3, 0, 5))
 ```
 
+> **提示**：上面代码中使用的Excel文件“阿里巴巴2020年股票数据.xls”可以通过后面的百度云盘地址进行获取。链接:https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g 提取码:e7b4。
+
 相信通过上面的代码，大家已经了解到了如何读取一个Excel文件，如果想知道更多关于`xlrd`模块的知识，可以阅读它的[官方文档](https://xlrd.readthedocs.io/en/latest/)。
 
 ### 写Excel文件
@@ -183,7 +185,7 @@ sheet2.write(nrows, 6, xlwt.Formula(f'sum(G2:G{nrows})'))
 wb_for_write.save('阿里巴巴2020年股票数据汇总.xls')
 ```
 
-> **说明**：上面的代码有一些小瑕疵，有兴趣的读者可以自行探索如何解决。
+> **说明**：上面的代码有一些小瑕疵，有兴趣的读者可以自行探索并思考如何解决。
 
 ###  简单的总结
 
