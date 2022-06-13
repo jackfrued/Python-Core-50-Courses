@@ -14,4 +14,5 @@
 
 下面是我创建的学习交流群（群号：789050736），欢迎加入一起学习共同进步。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20211205225143.png" style="zoom:50%;">
+<img src="https://github.com/jackfrued/mypic/raw/master/20211205225143.png" style="zoom:50%;">
+

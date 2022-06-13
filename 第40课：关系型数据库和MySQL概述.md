@@ -20,7 +20,7 @@
 
    **ER模型**，全称为**实体关系模型**（Entity-Relationship Model），由美籍华裔计算机科学家陈品山先生提出，是概念数据模型的高层描述方式，如下图所示。
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210826003119.png" width="75%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210826003119.png" width="75%">
 
    - 实体 - 矩形框
    - 属性 - 椭圆框
@@ -29,7 +29,7 @@
 
    实际项目开发中，我们可以利用数据库建模工具（如：PowerDesigner）来绘制概念数据模型（其本质就是 ER 模型），然后再设置好目标数据库系统，将概念模型转换成物理模型，最终生成创建二维表的 SQL（很多工具都可以根据我们设计的物理模型图以及设定的目标数据库来导出 SQL 或直接生成数据表）。
 
-   ![](https://gitee.com/jackfrued/mypic/raw/master/20210826003212.png)
+   ![](https://github.com/jackfrued/mypic/raw/master/20210826003212.png)
 
 5. 关系数据库产品。
    - [Oracle](https://www.oracle.com/index.html) - 目前世界上使用最为广泛的数据库管理系统，作为一个通用的数据库系统，它具有完整的数据管理功能；作为一个关系数据库，它是一个完备关系的产品；作为分布式数据库，它实现了分布式处理的功能。在 Oracle 最新的 12c 版本中，还引入了多承租方架构，使用该架构可轻松部署和管理数据库云。
@@ -52,85 +52,85 @@ MySQL 在过去由于性能高、成本低、可靠性好，已经成为最流�
 
 1. 通过[官方网站](https://www.mysql.com/)提供的[下载链接](https://dev.mysql.com/downloads/windows/installer/8.0.html)下载“MySQL社区版服务器”安装程序，如下图所示，建议大家下载离线安装版的MySQL Installer。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105230905.png" style="zoom:50%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105230905.png" style="zoom:50%">
 
 2. 运行 Installer，按照下面的步骤进行安装。
 
     - 选择自定义安装。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105231152.jpg" style="zoom:35%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105231152.jpg" style="zoom:35%">
 
     - 选择需要安装的组件。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105231255.jpg" style="zoom:35%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105231255.jpg" style="zoom:35%">
 
     - 如果缺少依赖项，需要先安装依赖项。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105231620.png" style="zoom:35%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105231620.png" style="zoom:35%">
 
     - 准备开始安装。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105231719.jpg" style="zoom:35%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105231719.jpg" style="zoom:35%">
 
     - 安装完成。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232024.jpg" style="zoom:35%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105232024.jpg" style="zoom:35%">
 
     - 准备执行配置向导。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105231815.jpg" style="zoom:35%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105231815.jpg" style="zoom:35%">
 
 3. 执行安装后的配置向导。
 
     - 配置服务器类型和网络。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232109.jpg" style="zoom:35%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105232109.jpg" style="zoom:35%">
 
     - 配置认证方法（保护密码的方式）。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232408.jpg" style="zoom:35%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105232408.jpg" style="zoom:35%">
 
     - 配置用户和角色。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232521.jpg" style="zoom:35%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105232521.jpg" style="zoom:35%">
 
     - 配置Windows服务名以及是否开机自启。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232608.jpg" style="zoom:35%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105232608.jpg" style="zoom:35%">
 
     - 配置日志。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232641.jpg" style="zoom:35%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105232641.jpg" style="zoom:35%">
 
     - 配置高级选项。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232724.jpg" alt="ACAC15B8633133B65476286A49BFBD7E" style="zoom:35%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105232724.jpg" alt="ACAC15B8633133B65476286A49BFBD7E" style="zoom:35%">
 
     - 应用配置。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232800.jpg" style="zoom:35%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105232800.jpg" style="zoom:35%">
 
 4. 可以在 Windows 系统的“服务”窗口中启动或停止 MySQL。
 
-    <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105232926.jpg" style="zoom:50%">
+    <img src="https://github.com/jackfrued/mypic/raw/master/20211105232926.jpg" style="zoom:50%">
 
 5. 配置 PATH 环境变量，以便在命令行提示符窗口使用 MySQL 客户端工具。
 
     - 打开 Windows 的“系统”窗口并点击“高级系统设置”。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105233054.jpg" style="zoom:50%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105233054.jpg" style="zoom:50%">
 
     - 在“系统属性”的“高级”窗口，点击“环境变量”按钮。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105233312.jpg" style="zoom:50%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105233312.jpg" style="zoom:50%">
 
     - 修改PATH环境变量，将MySQL安装路径下的`bin`文件夹的路径配置到PATH环境变量中。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105233359.jpg" style="zoom:50%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105233359.jpg" style="zoom:50%">
 
     - 配置完成后，可以尝试在“命令提示符”下使用 MySQL 的命令行工具。
 
-        <img src="https://gitee.com/jackfrued/mypic/raw/master/20211105233643.jpg" style="zoom:50%">
+        <img src="https://github.com/jackfrued/mypic/raw/master/20211105233643.jpg" style="zoom:50%">
 
 #### Linux 环境
 
@@ -273,22 +273,22 @@ MySQL 在过去由于性能高、成本低、可靠性好，已经成为最流�
 
    - MySQL Workbench（官方工具）
 
-       <img src="https://gitee.com/jackfrued/mypic/raw/master/20211106063939.png" style="zoom:50%">
+       <img src="https://github.com/jackfrued/mypic/raw/master/20211106063939.png" style="zoom:50%">
 
    - Navicat for MySQL（界面简单友好）
 
-       <img src="https://gitee.com/jackfrued/mypic/raw/master/20210521152457.png" style="zoom:50%;">
+       <img src="https://github.com/jackfrued/mypic/raw/master/20210521152457.png" style="zoom:50%;">
    
 
 #### macOS环境
 
 macOS 系统安装 MySQL 是比较简单的，只需要从刚才说到的官方网站下载 DMG 安装文件并运行就可以了，下载的时候需要根据自己使用的是 Intel 的芯片还是苹果的 M1 芯片选择下载链接，如下图所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20211121215901.png" style="zoom:50%;">
+<img src="https://github.com/jackfrued/mypic/raw/master/20211121215901.png" style="zoom:50%;">
 
 安装成功后，可以在“系统偏好设置”中找到“MySQL”，在如下所示的画面中，可以启动和停止 MySQL 服务器，也可以对 MySQL 核心文件的路径进行配置。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20211121215153.png" style="zoom:40%;">
+<img src="https://github.com/jackfrued/mypic/raw/master/20211121215153.png" style="zoom:40%;">
 
 ### MySQL 基本命令
 

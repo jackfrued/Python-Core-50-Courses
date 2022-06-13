@@ -40,7 +40,7 @@ Pillow中最为重要的是`Image`类，可以通过`Image`模块的`open`函数
    image.show()
    ```
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210803202628.png" width="80%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210803202628.png" width="80%">
 
 2. 剪裁图像
 
@@ -49,7 +49,7 @@ Pillow中最为重要的是`Image`类，可以通过`Image`模块的`open`函数
    image.crop((80, 20, 310, 360)).show()
    ```
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210803202701.png" width="80%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210803202701.png" width="80%">
 
 3. 生成缩略图
 
@@ -59,7 +59,7 @@ Pillow中最为重要的是`Image`类，可以通过`Image`模块的`open`函数
    image.show()
    ```
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210803202722.png" width="100%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210803202722.png" width="100%">
 
 4. 缩放和黏贴图像
 
@@ -77,7 +77,7 @@ Pillow中最为重要的是`Image`类，可以通过`Image`模块的`open`函数
    luohao_image.show()
    ```
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210803202749.png" width="80%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210803202749.png" width="80%">
 
 5. 旋转和翻转
 
@@ -91,7 +91,7 @@ Pillow中最为重要的是`Image`类，可以通过`Image`模块的`open`函数
    image.transpose(Image.FLIP_TOP_BOTTOM).show()
    ```
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210803202829.png" width="80%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210803202829.png" width="80%">
 
 6. 操作像素
 
@@ -103,7 +103,7 @@ Pillow中最为重要的是`Image`类，可以通过`Image`模块的`open`函数
    image.show()
    ```
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210803202932.png" width="80%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210803202932.png" width="80%">
 
 7. 滤镜效果
 
@@ -115,13 +115,13 @@ Pillow中最为重要的是`Image`类，可以通过`Image`模块的`open`函数
    image.filter(ImageFilter.CONTOUR).show()
    ```
 
-   <img src="https://gitee.com/jackfrued/mypic/raw/master/20210803202953.png" width="80%">
+   <img src="https://github.com/jackfrued/mypic/raw/master/20210803202953.png" width="80%">
 
 ### 使用Pillow绘图
 
 Pillow中有一个名为`ImageDraw`的模块，该模块的`Draw`函数会返回一个`ImageDraw`对象，通过`ImageDraw`对象的`arc`、`line`、`rectangle`、`ellipse`、`polygon`等方法，可以在图像上绘制出圆弧、线条、矩形、椭圆、多边形等形状，也可以通过该对象的`text`方法在图像上添加文字。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210803203016.png" width="80%">
+<img src="https://github.com/jackfrued/mypic/raw/master/20210803203016.png" width="80%">
 
 要绘制如上图所示的图像，完整的代码如下所示。
 

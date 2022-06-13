@@ -175,7 +175,7 @@ wb.save('demo.xlsx')
 
 运行上面的代码，打开生成的Excel文件，效果如下图所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210819235009.png" alt="image-20210819235009026" width="75%">
+<img src="https://github.com/jackfrued/mypic/raw/master/20210819235009.png" alt="image-20210819235009026" width="75%">
 
 ###  简单的总结
 

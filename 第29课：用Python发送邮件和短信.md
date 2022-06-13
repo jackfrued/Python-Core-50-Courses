@@ -10,9 +10,9 @@
 
 我们先尝试一下发送一封极为简单的邮件，该邮件不包含附件、图片以及其他超文本内容。发送邮件首先需要接入邮件服务器，我们可以自己架设邮件服务器，这件事情对新手并不友好，但是我们可以选择使用第三方提供的邮件服务。例如，我在<www.126.com>已经注册了账号，登录成功之后，就可以在设置中开启SMTP服务，这样就相当于获得了邮件服务器，具体的操作如下所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820190307.png" alt="image-20210820190306861" width="95%">
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820190307.png" alt="image-20210820190306861" width="95%">
 
-![image-20210820190816557](https://gitee.com/jackfrued/mypic/raw/master/20210820190816.png)
+![image-20210820190816557](https://github.com/jackfrued/mypic/raw/master/20210820190816.png)
 
 用手机扫码上面的二维码可以通过发送短信的方式来获取授权码，短信发送成功后，点击“我已发送”就可以获得授权码。授权码需要妥善保管，因为一旦泄露就会被其他人冒用你的身份来发送邮件。接下来，我们就可以编写发送邮件的代码了，如下所示。
 
@@ -147,7 +147,7 @@ def send_email(*, from_user, to_users, subject='', content='', filenames=[]):
 
 发送短信也是项目中常见的功能，网站的注册码、验证码、营销信息基本上都是通过短信来发送给用户的。发送短信需要三方平台的支持，下面我们以[螺丝帽平台](https://luosimao.com/)为例，为大家介绍如何用Python程序发送短信。注册账号和购买短信服务的细节我们不在这里进行赘述，大家可以咨询平台的客服。
 
-![image-20210820194420911](https://gitee.com/jackfrued/mypic/raw/master/20210820194421.png)
+![image-20210820194420911](https://github.com/jackfrued/mypic/raw/master/20210820194421.png)
 
 接下来，我们可以通过`requests`库向平台提供的短信网关发起一个HTTP请求，通过将接收短信的手机号和短信内容作为参数，就可以发送短信，代码如下所示。
 
@@ -189,11 +189,11 @@ if __name__ == '__main__':
 
 上面请求螺丝帽的短信网关`http://sms-api.luosimao.com/v1/send.json`会返回JSON格式的数据，如果返回`{'error': 0, 'msg': 'OK'}`就说明短信已经发送成功了，如果`error`的值不是`0`，可以通过查看官方的[开发文档](https://luosimao.com/docs/api/)了解到底哪个环节出了问题。螺丝帽平台常见的错误类型如下图所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820195505.png" alt="image-20210820195505761" style="zoom:50%;">
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820195505.png" alt="image-20210820195505761" style="zoom:50%;">
 
 目前，大多数短信平台都会要求短信内容必须附上签名，下图是我在螺丝帽平台配置的短信签名“【Python小课】”。有些涉及到敏感内容的短信，还需要提前配置短信模板，有兴趣的读者可以自行研究。一般情况下，平台为了防范短信被盗用，还会要求设置“IP白名单”，不清楚如何配置的可以咨询平台客服。
 
-![image-20210820194653785](https://gitee.com/jackfrued/mypic/raw/master/20210820194653.png)
+![image-20210820194653785](https://github.com/jackfrued/mypic/raw/master/20210820194653.png)
 
 当然国内的短信平台很多，读者可以根据自己的需要进行选择（通常会考虑费用预算、短信达到率、使用的难易程度等指标），如果需要在商业项目中使用短信服务建议购买短信平台提供的套餐服务。
 

@@ -87,7 +87,7 @@ document.save('demo.docx')
 
 执行上面的代码，打开生成的Word文档，效果如下图所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820002742.png" alt="image-20210820002742341" width="40%">&nbsp;&nbsp;<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820002843.png" alt="image-20210820002843696" width="40%">
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820002742.png" alt="image-20210820002742341" width="40%">&nbsp;&nbsp;<img src="https://github.com/jackfrued/mypic/raw/master/20210820002843.png" alt="image-20210820002843696" width="40%">
 
 对于一个已经存在的Word文件，我们可以通过下面的代码去遍历它所有的段落并获取对应的内容。
 
@@ -121,7 +121,7 @@ for no, p in enumerate(doc.paragraphs):
 
 按照上面的思路，我们首先编辑一个离职证明的模板文件，如下图所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820004223.png" alt="image-20210820004223731" width="75%" style="border:1px solid black"/>
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820004223.png" alt="image-20210820004223731" width="75%" style="border:1px solid black"/>
 
 接下来我们读取该文件，将占位符替换为真实信息，就可以生成一个新的Word文档，如下所示。
 
@@ -182,7 +182,7 @@ for emp_dict in employees:
 
 执行上面的代码，会在当前路径下生成三个Word文档，如下图所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820004825.png" alt="image-20210820004825183" width="50%">
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820004825.png" alt="image-20210820004825183" width="50%">
 
 ### 生成PowerPoint
 
@@ -238,7 +238,7 @@ pres.save('test.pptx')
 
 运行上面的代码，生成的PowerPoint文件如下图所示。
 
-<img src="https://gitee.com/jackfrued/mypic/raw/master/20210820010306.png" alt="image-20210820010306008" width="75%" />
+<img src="https://github.com/jackfrued/mypic/raw/master/20210820010306.png" alt="image-20210820010306008" width="75%" />
 
 ### 简单的总结
 
