@@ -22,7 +22,7 @@
 
 教程和视频中用到的文件、代码等内容，请统一访问百度网盘获取。
 
-链接：https://pan.baidu.com/s/1NhWtYcpFzF72cxcsoDoXjQ?pwd=swg1，提取码：swg1。 
+链接：<https://pan.baidu.com/s/1NhWtYcpFzF72cxcsoDoXjQ?pwd=swg1>，提取码：swg1。 
 
 ### 交流大群
 
