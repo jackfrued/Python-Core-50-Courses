@@ -15,9 +15,9 @@ pip install PyPDF2
 ```Python
 import PyPDF2
 
-reader = PyPDF2.PdfFileReader('test.pdf')
-page = reader.getPage(0)
-print(page.extractText())
+reader = PyPDF2.PdfReader('test.pdf')
+for page in reader.pages:
+    print(page.extract_text())
 ```
 
 > **提示**：上面代码中使用的PDF文件“test.pdf”以及下面的代码中需要用到的PDF文件，也可以通过下面的百度云盘地址进行获取。链接:https://pan.baidu.com/s/1rQujl5RQn9R7PadB2Z5g_g 提取码:e7b4。
@@ -36,31 +36,18 @@ pdf2text.py test.pdf
 上面的代码中通过创建`PdfFileReader`对象的方式来读取PDF文档，该对象的`getPage`方法可以获得PDF文档的指定页并得到一个`PageObject`对象，通过`PageObject`对象的`rotateClockwise`和`rotateCounterClockwise`方法可以实现页面的顺时针和逆时针方向旋转，通过`PageObject`对象的`addBlankPage`方法可以添加一个新的空白页，代码如下所示。
 
 ```Python
-import PyPDF2
+reader = PyPDF2.PdfReader('XGBoost.pdf')
+writer = PyPDF2.PdfWriter()
 
-from PyPDF2.pdf import PageObject
-
-# 创建一个读PDF文件的Reader对象
-reader = PyPDF2.PdfFileReader('resources/XGBoost.pdf')
-# 创建一个写PDF文件的Writer对象
-writer = PyPDF2.PdfFileWriter()
-# 对PDF文件所有页进行循环遍历
-for page_num in range(reader.numPages):
-    # 获取指定页码的Page对象
-    current_page = reader.getPage(page_num)  # type: PageObject
-    if page_num % 2 == 0:
-        # 奇数页顺时针旋转90度
-        current_page.rotateClockwise(90)
+for no, page in enumerate(reader.pages):
+    if no % 2 == 0:
+        new_page = page.rotate(-90)
     else:
-        # 偶数页反时针旋转90度
-        current_page.rotateCounterClockwise(90)
-    writer.addPage(current_page)
-# 最后添加一个空白页并旋转90度
-page = writer.addBlankPage()  # type: PageObject
-page.rotateClockwise(90)
-# 通过Writer对象的write方法将PDF写入文件
-with open('resources/XGBoost-modified.pdf', 'wb') as file:
-    writer.write(file)
+        new_page = page.rotate(90)
+    writer.add_page(new_page)
+
+with open('temp.pdf', 'wb') as file_obj:
+    writer.write(file_obj)
 ```
 
 ### 加密PDF文件
@@ -70,14 +57,16 @@ with open('resources/XGBoost-modified.pdf', 'wb') as file:
 ```Python
 import PyPDF2
 
-reader = PyPDF2.PdfFileReader('resources/XGBoost.pdf')
-writer = PyPDF2.PdfFileWriter()
-for page_num in range(reader.numPages):
-    writer.addPage(reader.getPage(page_num))
-# 通过encrypt方法加密PDF文件，方法的参数就是设置的密码
+reader = PyPDF2.PdfReader('XGBoost.pdf')
+writer = PyPDF2.PdfWriter()
+
+for page in reader.pages:
+    writer.add_page(page)
+    
 writer.encrypt('foobared')
-with open('resources/XGBoost-encrypted.pdf', 'wb') as file:
-    writer.write(file)
+
+with open('temp.pdf', 'wb') as file_obj:
+    writer.write(file_obj)
 ```
 
 ### 批量添加水印
@@ -85,23 +74,17 @@ with open('resources/XGBoost-encrypted.pdf', 'wb') as file:
 上面提到的`PageObject`对象还有一个名为`mergePage`的方法，可以两个PDF页面进行叠加，通过这个操作，我们很容易实现给PDF文件添加水印的功能。例如要给上面的“XGBoost.pdf”文件添加一个水印，我们可以先准备好一个提供水印页面的PDF文件，然后将包含水印的`PageObject`读取出来，然后再循环遍历“XGBoost.pdf”文件的每个页，获取到`PageObject`对象，然后通过`mergePage`方法实现水印页和原始页的合并，代码如下所示。
 
 ```Python
-import PyPDF2
+reader1 = PyPDF2.PdfReader('XGBoost.pdf')
+reader2 = PyPDF2.PdfReader('watermark.pdf')
+writer = PyPDF2.PdfWriter()
+watermark_page = reader2.pages[0]
 
-from PyPDF2.pdf import PageObject
+for page in reader1.pages:
+    page.merge_page(watermark_page)
+    writer.add_page(page)
 
-reader1 = PyPDF2.PdfFileReader('resources/XGBoost.pdf')
-reader2 = PyPDF2.PdfFileReader('resources/watermark.pdf')
-writer = PyPDF2.PdfFileWriter()
-# 获取水印页
-watermark_page = reader2.getPage(0)
-for page_num in range(reader1.numPages):
-    current_page = reader1.getPage(page_num)  # type: PageObject
-    current_page.mergePage(watermark_page)
-    # 将原始页和水印页进行合并
-    writer.addPage(current_page)
-# 将PDF写入文件
-with open('resources/XGBoost-watermarked.pdf', 'wb') as file:
-    writer.write(file)
+with open('temp.pdf', 'wb') as file_obj:
+    writer.write(file_obj)
 ```
 
 如果愿意，还可以让奇数页和偶数页使用不同的水印，大家可以自己思考下应该怎么做。
