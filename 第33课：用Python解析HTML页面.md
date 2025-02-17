@@ -36,7 +36,7 @@ XPath 是在 XML（eXtensible Markup Language）文档中查找信息的一种�
       <price>29.99</price>
     </book>
     <book>
-      <title lang="zh">Learning XML</title>
+      <title lang='zh'>Learning XML</title>
       <price>39.95</price>
     </book>
 </bookstore>
