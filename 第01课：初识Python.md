@@ -2,7 +2,7 @@
 
 ### Python简介
 
-Python是由荷兰人吉多·范罗苏姆（Guido von Rossum）发明的一种编程语言，是目前世界上最受欢迎和拥有最多用户群体的编程语言。
+Python是由荷兰人吉多·范罗苏姆（Guido van Rossum）发明的一种编程语言，是目前世界上最受欢迎和拥有最多用户群体的编程语言。
 
 <img src="https://github.com/jackfrued/mypic/raw/master/20210816232538.png" width="85%">
 
